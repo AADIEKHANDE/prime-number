@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Number</title>
+    <style>
+        .box{
+            padding: 20px;
+            box-shadow: 0 0 5px;
+            margin: auto;
+            width: 250px;
+            margin-top: 100px;
+            padding-top: 5px;
+        }
+        .box2{
+            padding: 20px;
+            box-shadow: 0 0 5px;
+            margin: auto;
+            width: 250px;
+            margin-top: 10px;
+            padding-top: 5px;
+        }
+        .box input{
+            padding: 5px;
+            margin: 5px;
+            width: 220px;
+            border-top: none;
+            border-left: none;
+            border-right: none  ;
+            outline: none;
+        }
+        .box2 input{
+            padding: 5px;
+            margin: 5px;
+            border: none;
+            outline: none;
+        }
+        body{
+            font-family: Century Gothic;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Check Prime Number</h2>
+        <input type="text" name="number" id="number" placeholder="Enter Number" autocomplete="off">
+        <br>
+        <input type="submit" onclick="result()" value="Submit" name="submit" style="width:92%; outline:none; border: none; background-image:linear-gradient(to right,rgb(59, 146, 228),rgb(27, 85, 173)); color: white; font-weight: bolder; cursor: pointer; zoom: 2px;">
+    </div>
+    <div class="box2">
+        <h2>Result</h2>
+        <input type="text" name="result" readonly id="result" placeholder="Result">
+    </div>
+</body>
+</html>
+<script>
+    
+    
+    function result()
+    {
+        var a=parseInt(document.getElementById("number").value);
+        var flag=0;
+        if(a>1)
+        {
+            for(var i=2; i<(a+1)/2; i++)
+            {
+                if(a%i==0)
+                {
+                    flag=1;
+                }   
+            }
+            
+            if(flag==1)
+            {
+                document.getElementById('result').value=a+" Is Not a Prime Number";
+                document.getElementById('result').style.color="rgb(235, 48, 48)";
+                
+            }
+            else
+            {
+                document.getElementById('result').value=a+" Is a Prime Number";
+                document.getElementById('result').style.color="rgb(47, 219, 84)";
+            }
+        }
+        else
+        {
+            alert("Please enter a Non-Zero Value");
+        }
+
+    }
+</script>
